@@ -15,7 +15,7 @@ export const siteConfig = {
   logo: logoImg,
   icon: logoIconImg,
   mode: MODE.LIGHT,
-  layout: LAYOUT_OPTIONS.HYDROGEN,
+  layout: LAYOUT_OPTIONS.LITHIUM,
   // TODO: favicon
 };
 
