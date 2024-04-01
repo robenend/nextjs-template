@@ -42,7 +42,7 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: '',
+        hostname: 'isomorphic-furyroad.s3.amazonaws.com',
       },
     ],
   },
