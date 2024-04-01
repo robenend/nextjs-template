@@ -3,10 +3,8 @@
 import Image from 'next/image';
 import toast from 'react-hot-toast';
 import { useCallback, useState } from 'react';
-import type { FileWithPath } from '@uploadthing/react';
 import { useDropzone } from '@uploadthing/react/hooks';
 import {
-  UploadFileResponse,
   generateClientDropzoneAccept,
 } from 'uploadthing/client';
 import { useUploadThing } from '@/utils/uploadthing';
@@ -40,9 +38,9 @@ export default function AvatarUpload({
   const { startUpload, permittedFileInfo, isUploading } = useUploadThing(
     'avatar',
     {
-      onClientUploadComplete: (res: UploadFileResponse<any>[] | undefined) => {
+      onClientUploadComplete: (res: any | undefined) => {
         if (setValue) {
-          const respondedUrls = res?.map((r) => ({
+          const respondedUrls = res?.map((r: any) => ({
             name: r.name,
             size: r.size,
             url: r.url,
@@ -67,7 +65,7 @@ export default function AvatarUpload({
     : [];
 
   const onDrop = useCallback(
-    (acceptedFiles: FileWithPath[]) => {
+    (acceptedFiles: any[]) => {
       setFiles([
         ...acceptedFiles.map((file) =>
           Object.assign(file, {

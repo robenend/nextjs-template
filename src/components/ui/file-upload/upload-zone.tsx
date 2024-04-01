@@ -5,13 +5,9 @@ import toast from 'react-hot-toast';
 import isEmpty from 'lodash/isEmpty';
 import prettyBytes from 'pretty-bytes';
 import { useCallback, useState } from 'react';
-import type { FileWithPath } from '@uploadthing/react';
 import { useDropzone } from '@uploadthing/react/hooks';
 import { PiCheckBold, PiTrashBold, PiUploadSimpleBold } from 'react-icons/pi';
-import {
-  UploadFileResponse,
-  generateClientDropzoneAccept,
-} from 'uploadthing/client';
+import { generateClientDropzoneAccept } from 'uploadthing/client';
 import { useUploadThing } from '@/utils/uploadthing';
 import { Button } from '@/components/ui/button';
 import { Text } from '@/components/ui/text';
@@ -46,7 +42,7 @@ export default function UploadZone({
   const [files, setFiles] = useState<File[]>([]);
 
   const onDrop = useCallback(
-    (acceptedFiles: FileWithPath[]) => {
+    (acceptedFiles: any[]) => {
       console.log('acceptedFiles', acceptedFiles);
       setFiles([
         ...acceptedFiles.map((file) =>
@@ -83,7 +79,7 @@ export default function UploadZone({
   const { startUpload, permittedFileInfo, isUploading } = useUploadThing(
     'generalMedia',
     {
-      onClientUploadComplete: (res: UploadFileResponse<any>[] | undefined) => {
+      onClientUploadComplete: (res: any[] | undefined) => {
         console.log('res', res);
         if (setValue) {
           // const respondedUrls = res?.map((r) => r.url);

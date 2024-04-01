@@ -36,7 +36,7 @@
     "@react-email/text": "0.0.7",
     "@t3-oss/env-nextjs": "^0.7.1",
     "@tailwindcss/container-queries": "^0.1.1",
-    "@uploadthing/react": "^6.0.2",
+    "@uploadthing/react": "^6.4.1",
     "clsx": "^2.0.0",
     "date-arithmetic": "^4.1.0",
     "dayjs": "^1.11.10",
